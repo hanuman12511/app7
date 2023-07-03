@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+
+import 'AddressPage.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -10,6 +10,14 @@ class PaymentScreen extends StatefulWidget {
 }
 
 class _PaymentScreenState extends State<PaymentScreen> {
+  AddAddres1() {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => AddressPage(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -37,7 +45,8 @@ class _PaymentScreenState extends State<PaymentScreen> {
                       margin: EdgeInsets.only(top: 5),
                       width: w * .35,
                       child: ElevatedButton(
-                          child: Text("Add Address"), onPressed: () => {}),
+                          child: Text("Add Address"),
+                          onPressed: () => AddAddres1()),
                     )
                   ]),
             ),
