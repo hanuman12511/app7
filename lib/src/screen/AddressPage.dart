@@ -16,7 +16,8 @@ class AddressPage extends StatefulWidget {
 
 class _AddressPage extends State<AddressPage> {
   String googleApikey = "AIzaSyAAyHoCJwzvjHgQCmJAMeRNQk1hiWyyM0A";
-  GoogleMapsPlaces _places = GoogleMapsPlaces(apiKey: "AIzaSyAAyHoCJwzvjHgQCmJAMeRNQk1hiWyyM0A");
+  GoogleMapsPlaces _places =
+      GoogleMapsPlaces(apiKey: "AIzaSyAAyHoCJwzvjHgQCmJAMeRNQk1hiWyyM0A");
   bool servicestatus = false;
   bool haspermission = false;
   late LocationPermission permission;
@@ -107,8 +108,8 @@ class _AddressPage extends State<AddressPage> {
         appBar: AppBar(
             title: Text("Get GPS Location"), backgroundColor: Colors.redAccent),
         body: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
+          scrollDirection: Axis.vertical,
+          child: /* Container(
                 alignment: Alignment.center,
                 child: TextButton(
                   onPressed: () async {
@@ -119,8 +120,8 @@ class _AddressPage extends State<AddressPage> {
                     displayPrediction(p);
                   },
                   child: Text('Find address'),
-                ))));
-    /* Container(
+                )))); */
+              Container(
             alignment: Alignment.center,
             padding: EdgeInsets.all(50),
             child: Column(
@@ -136,15 +137,15 @@ class _AddressPage extends State<AddressPage> {
                       final geolocation = await place.geolocation;
                       print("************************************");
                       print(geolocation);
-                    }), */
-    /*  Text(servicestatus ? "GPS is Enabled" : "GPS is disabled."),
+                    }),
+                /*  Text(servicestatus ? "GPS is Enabled" : "GPS is disabled."),
             Text(haspermission ? "GPS is Enabled" : "GPS is disabled."),
             Text("Longitude: $long", style: TextStyle(fontSize: 20)),
             Text(
               "Latitude: $lat",
               style: TextStyle(fontSize: 20),
             ), */
-    /*  Column(children: [
+                Column(children: [
                   SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Container(
@@ -258,17 +259,14 @@ class _AddressPage extends State<AddressPage> {
                                   )))
                         ])),
                   )
-                ]) */
-    /*    ],
+                ])
+              ],
             ),
           ),
-        )); */
-
-
-        
+        ));
   }
-  
-  Future<Null> displayPrediction(Prediction p) async {
+
+  /*  Future<Null> displayPrediction(Prediction p) async {
     if (p != null) {
       PlacesDetailsResponse detail =
       await _places.getDetailsByPlaceId(p.placeId);
@@ -281,5 +279,5 @@ class _AddressPage extends State<AddressPage> {
 
       print(lat);
       print(lng);
-    }
+    } */
 }
